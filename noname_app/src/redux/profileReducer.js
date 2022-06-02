@@ -1,48 +1,94 @@
+import {ProfileApi} from "../api/api";
+
 const ADD_POST = 'ADD_POST';
-const POST_UPDATE = "POST_UPDATE";
+const SHOW_POSTS = "SHOW_POSTS";
+const DELETE_POST = "DELETE_POST";
+
 
 const initialState = {
-    posts: [
-        {id: 0, text: 'Hello World!'},
-        {id: 1, text: 'I am no Superman!'},
-        {id: 2, text: 'Yoa are so sexy!'},
-    ],
-    newPostTest: '',
+    posts: [],
 }
 
 export const profileReducer = (state=initialState,action)=>{
     switch (action.type) {
         case ADD_POST: {
-            const newPost = {
-                id: state.posts.length,
-                text: action.payload,
-            }
             return {
                 ...state,
-                posts: [...state.posts, newPost],
+                posts: [...state.posts, action.payload],
             }
     }
 
-        case POST_UPDATE: {
+        case SHOW_POSTS: {
             return {
                 ...state,
-                newPostTest: action.payload,
-            }
+                posts: action.payload,
 
+            }
         }
+
+        case DELETE_POST: {
+            return {
+                ...state,
+                posts: state.posts.filter(post=>post.id =! action.payload)
+            }
+        }
+
+
         default:
             return state
         }
 }
 
-export const addPost = (text)=> ({
-        type: ADD_POST,
-        payload: text,
+export const addPost = (payload) => ({
+    type: ADD_POST,
+    payload,
 })
 
-// export const updatePost = (text)=> {
-//     return {
-//         type: POST_UPDATE,
-//         payload: text,
-//     }
-// }
+export  const showPosts = (payload) => ({
+    type: SHOW_POSTS,
+    payload
+})
+
+export const deletePost = (payload) => ({
+    type: DELETE_POST,
+    payload,
+})
+
+
+export const fastFetchPosts = ()=>{
+    return (dispatch)=> {
+        ProfileApi.fetchPosts()
+            .then(response=>{
+                const payload = Object.keys(response.data).map(key => {
+                    return {
+                        ...response.data[key],
+                        id: key,
+                    }
+                })
+                dispatch(showPosts(payload))
+            })
+    }
+}
+
+export const addNewPost = (text,id)=>{
+    return (dispatch)=> {
+        const post = {
+            id,
+            text,
+        }
+        ProfileApi.addPost(post)
+            .then(()=>{
+                dispatch(addPost(post))
+            })
+    }
+}
+
+
+export const deleteOldPost = (id)=>{
+    return (dispatch)=> {
+        ProfileApi.deletePost(id)
+            .then(()=>{
+                dispatch(deletePost(id))
+            })
+    }
+}

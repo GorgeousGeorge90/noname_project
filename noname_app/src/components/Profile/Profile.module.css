@@ -1,27 +1,38 @@
 .main {
-    width: 900px;
+    width: 800px;
     margin: 0 auto;
     background-color: whitesmoke;
     height: 100vh;
 }
 
 .info {
-    font-family: "Helvetica Neue";
-    font-weight: bold;
     display: flex;
 }
 
-
 .info img {
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 50px;
+}
+
+.description {
+    font-family: fantasy;
+    font-weight: bolder;
+    font-size: 1.3em;
+    color: coral;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+.about {
+    font-family: "Apple SD Gothic Neo";
+    font-size: 0.8em;
+    color: black;
 }
 
 .content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding-left: 65px;
 }

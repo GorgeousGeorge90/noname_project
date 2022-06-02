@@ -1,0 +1,13 @@
+.formControl {
+    color: red;
+}
+
+.formControl textarea {
+    width: 400px;
+    height: 40px;
+    resize: none;
+}
+
+.error textarea {
+    border: solid 2px red;
+}

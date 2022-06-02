@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import rocket from '../../assets/img /rocket.png';
-import CustomLink from "../common /CustomLink/CustomLink";
+import CustomLink from  '../common /CustomLink/CustomLink';
 
 
 const Header = ()=>{
@@ -16,9 +16,6 @@ const Header = ()=>{
                     </li>
                     <li className={styles.item}>
                         <CustomLink to='news'>News</CustomLink>
-                    </li>
-                    <li className={styles.item}>
-                        <CustomLink to='settings'>Settings</CustomLink>
                     </li>
                 </ul>
             </nav>
