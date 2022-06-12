@@ -1,8 +1,11 @@
-import {useState} from "react";
+import {useEffect, useState} from 'react';
 
 
 const StatusFrom = ()=>{
-    const [status,setStatus] = useState('')
+    const [status, setStatus] = useState(() => {
+        const localData = localStorage.getItem('status')
+        return localData ? JSON.parse(localData) : ''
+    })
     const [mode,setMode] = useState({
         editMode: false,
     })
@@ -15,6 +18,11 @@ const StatusFrom = ()=>{
     const updateStatus = (e)=> {
         setStatus(e.currentTarget.value)
     }
+
+    useEffect(()=>{
+        localStorage.setItem('status',JSON.stringify(status))
+    }, [status])
+
     return (
         <div>
             {

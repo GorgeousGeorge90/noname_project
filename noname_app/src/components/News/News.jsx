@@ -1,9 +1,12 @@
-import {useDispatch, useSelector} from "react-redux";
-import {useEffect} from "react";
-import {fetchPosts} from "../../redux/newsReduser";
+import {useDispatch, useSelector} from 'react-redux';
+import {useEffect} from 'react';
+import {fetchPosts} from '../../redux/newsReduser';
+import styles from './News.module.css'
+import {useTheme} from '../common /Hooks/useTheme';
 
 
 const News = ()=> {
+    const {theme,setTheme} = useTheme()
     const posts = useSelector(state=>state.newsPage.posts)
     const dispatch = useDispatch();
 
@@ -12,9 +15,13 @@ const News = ()=> {
     },[])
 
     return (
-        <div>
-            Here is the news!
-            {posts.map(post=><p>{post.body}</p>)}
+        <div className={styles.main}>
+            <div className={styles.title}>
+                Here is the news!
+            </div>
+            <div className={styles.content}>
+                {posts.map(post => <p>{post.body}</p>)}
+            </div>
         </div>
     )
 }

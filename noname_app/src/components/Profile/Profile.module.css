@@ -1,7 +1,7 @@
 .main {
     width: 800px;
     margin: 0 auto;
-    background-color: whitesmoke;
+    background-color: var(--background-color);
     height: 100vh;
 }
 

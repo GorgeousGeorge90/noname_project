@@ -1,31 +1,43 @@
 .header {
     display: flex;
-    background:url("https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2707&q=80");
+    flex-direction: row;
+    background: url("https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2707&q=80");
     font-family: "Iowan Old Style";
 }
 
 .logo img{
     height: 80px;
     padding: 35px;
-    flex-shrink: 0;
 }
 
 .nav {
     list-style: none;
-    display: flex;
     padding-top: 80px;
-    flex-shrink: 1;
+    display: flex;
+    justify-content: space-evenly;
 }
+
+.navbar {
+    flex-grow: 1
+}
+
 
 .item a{
     text-decoration: none;
-    padding-left: 50px;
     font-size: 1.5em;
     font-weight: bold;
     color: white;
+    justify-content: space-evenly;
 }
 
 .activeLink a{
     color: darkslateblue;
     background-color: orange;
+}
+
+.btn {
+    display: flex;
+    align-items: end;
+    width: 200px;
+    margin-bottom: 20px;
 }

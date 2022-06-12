@@ -1,26 +1,25 @@
-import {useDispatch, useSelector,} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import ava from '../../assets/img /ava.png';
 import styles from './Profile.module.css';
-import Posts from "./Post/Post";
-import {FormContact} from "./PostForm/PostForm";
-import StatusFrom from "../common /StatusForm/StatusFrom";
-import {useEffect} from "react";
-import {addNewPost, fastFetchPosts} from "../../redux/profileReducer";
+import Posts from './Posts/Posts';
+import {FormContact} from './PostForm/PostForm';
+import StatusFrom from '../common /StatusForm/StatusFrom';
+import {useEffect} from 'react';
+import {addNewPost, fastFetchPosts} from '../../redux/profileReducer';
+
 
 
 
 const Profile = () => {
-    const posts = useSelector(state=>state.profilePage.posts)
     const dispatch = useDispatch();
 
-    useEffect( ()=>{
+    useEffect(() => {
         dispatch(fastFetchPosts())
-        },[])
+    }, [])
 
     const addPost = (values)=>{
         let text = values.post
-        let id = posts.length
-        dispatch(addNewPost(text,id))
+        dispatch(addNewPost(text))
     }
 
 
@@ -38,7 +37,7 @@ const Profile = () => {
                 </div>
             </div>
             <div className={styles.content}>
-                {posts.map(post => <Posts post={post}/>)}
+                <Posts/>
                 <FormContact onSubmit={addPost}/>
             </div>
         </div>

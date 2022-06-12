@@ -13,6 +13,7 @@ export const ProfileApi = {
 
     deletePost: id => axios.delete(baseUrl + `/posts/${id}.json`),
 
+
 }
 
 export const NewsApi = {
