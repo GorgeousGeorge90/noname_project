@@ -1,4 +1,4 @@
-#noname_project
+noname_project
 
 ***
 
@@ -6,7 +6,7 @@
 
 ***
 
-###Contents:
+Contents:
 
  * Description;
  * Tech stack
@@ -14,12 +14,12 @@
  * Location
 
 
-###Description:
+Description:
 
 Данный проект представляет собой  ***SPA***, написанный на ***REACT JS*** и содержащий страницу 
 постов и новостей!
 
-###Tech stack:
+Tech stack:
 
  * **React JS**;
  * **Redux**;
@@ -32,7 +32,7 @@
    * redux-form;
    * redux-thunk;
 
-###Functional: 
+Functional: 
 
  * на странице ***Profile*** реализовани мехнизм добавления/удаления постов;
  * на странице ***News*** просто отображаются новости с обработанного get запроса
@@ -40,7 +40,7 @@
  * в верхнем правом углу есть возможность смены тем светлая/темная;
 
 
-###Location:
+Location:
 
  *  данный проект, расположен по адресу: <https://github.com/GorgeousGeorge90/noname_project>
    
