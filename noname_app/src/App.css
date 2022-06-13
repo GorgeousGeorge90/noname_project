@@ -1,0 +1,6 @@
+.app-wrapper {
+    display: grid;
+    grid-template-areas: 'header'
+                          'body';
+    grid-template-rows: 150px 1fr;
+}

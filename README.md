@@ -2,7 +2,7 @@
 
 ***
 
-<img alt="logo" height="200px" src="noname_app/src/assets/img%20/rocket.png" width="200px"/>
+![logo](noname_app/src/assets/img%20/ava.jpeg)
 
 ***
 
