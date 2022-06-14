@@ -28,7 +28,6 @@ Tech stack:
    * axios;
    * react-hook-form;
    * react-switch;
-   * react-toggle;
    * redux-form;
    * redux-thunk;
 
